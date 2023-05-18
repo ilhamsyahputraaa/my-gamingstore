@@ -1,0 +1,6 @@
+{
+  "prettier.bracketSameLine": true,
+  "prettier.bracketSpacing": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true
+}
