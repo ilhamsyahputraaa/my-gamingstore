@@ -1,68 +1,55 @@
 import Link from "next/link";
+import { Dropdown } from "react-bootstrap";
 
 interface AuthProps {
   isLogin?: boolean;
 }
 
+
 export default function Auth(props: Partial<AuthProps>) {
   const { isLogin } = props;
 
-  if (isLogin) {
+  if (!isLogin) {
     return (
       <>
-        <li className="nav-item my-auto dropdown d-flex">
-          <div className="vertical-line d-lg-block d-none"></div>
-          <div>
-            <a
-              className="dropdown-toggle ms-lg-40"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <img
-                src='/img/avatar-1.png'
-                className="rounded-circle"
-                width="40"
-                height="40"
-                alt=""
-              />
-            </a>
+        <Dropdown>
+          <Dropdown.Toggle
+            id="dropdown-basic"
+            className="bg-none dropdown ms-lg-40 dropdown-toggle">
+            <img
+              src="/img/avatar-1.png"
+              className="rounded-circle"
+              width="40"
+              height="40"
+              alt=""
+            />
+          </Dropdown.Toggle>
 
-            <ul
-              className="dropdown-menu border-0"
-              aria-labelledby="dropdownMenuLink">
-              <li>
-                <a
-                  className="dropdown-item text-lg color-palette-2"
-                  href="/member">
-                  My Profile
-                </a>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item text-lg color-palette-2"
-                  href="#">
-                  Wallet
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item text-lg color-palette-2"
-                  href="#">
-                  Account Settings
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="dropdown-item text-lg color-palette-2"
-                  href="#">
-                  Log Out
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </li>
+          <Dropdown.Menu>
+            <li>
+              <Link
+                className="dropdown-item text-lg color-palette-2"
+                href="/member">
+                My Profile
+              </Link>
+            </li>
+            <li>
+              <Link className="dropdown-item text-lg color-palette-2" href="#">
+                Wallet
+              </Link>
+            </li>
+            <li>
+              <Link className="dropdown-item text-lg color-palette-2" href="#">
+                Account Settings
+              </Link>
+            </li>
+            <li>
+              <Link className="dropdown-item text-lg color-palette-2" href="#">
+                Log Out
+              </Link>
+            </li>
+          </Dropdown.Menu>
+        </Dropdown>
       </>
     );
   }

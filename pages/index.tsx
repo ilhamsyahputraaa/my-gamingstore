@@ -19,7 +19,6 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-
         <NavBar />
         <section className="header pt-lg-60 pb-50">
           <div className="container-xxl container-fluid">
