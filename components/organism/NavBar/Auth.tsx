@@ -39,12 +39,12 @@ export default function Auth(props: Partial<AuthProps>) {
               </Link>
             </li>
             <li>
-              <Link className="dropdown-item text-lg color-palette-2" href="#">
+              <Link className="dropdown-item text-lg color-palette-2" href="/edit=profile">
                 Account Settings
               </Link>
             </li>
             <li>
-              <Link className="dropdown-item text-lg color-palette-2" href="#">
+              <Link className="dropdown-item text-lg color-palette-2" href="/sign-in">
                 Log Out
               </Link>
             </li>
