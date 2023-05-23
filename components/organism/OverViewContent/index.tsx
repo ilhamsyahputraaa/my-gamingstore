@@ -6,7 +6,7 @@ import TableRow from "./TableRow";
 export default function OverviewContent() {
   return (
     <>
-      <SideBar />
+      <SideBar activeMenu={"overview"} />
       <main className="main-wrapper">
         <div className="ps-lg-0">
           <h2 className="text-4xl fw-bold color-palette-1 mb-30">Overview</h2>
@@ -15,7 +15,7 @@ export default function OverviewContent() {
               Top Up Categories
             </p>
             <div className="main-content">
-              <div className="row">
+              <div className="d-flex row">
                 <Category icon={"desktop"} total={18000500}>
                   Game <br />
                   Desktop
@@ -53,7 +53,7 @@ export default function OverviewContent() {
                     category={"Desktop"}
                     item={200}
                     price={290000}
-                    status={"pending"}
+                    status={"Pending"}
                     image={"overview-1"}
                   />
                   <TableRow
@@ -77,7 +77,7 @@ export default function OverviewContent() {
                     category={"Mobile"}
                     item={225}
                     price={200000}
-                    status={"pending"}
+                    status={"Pending"}
                     image={"overview-4"}
                   />
                 </tbody>

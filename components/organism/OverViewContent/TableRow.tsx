@@ -1,5 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import cx from "classnames";
+
+
 
 interface TableRowProps{
     title : string;
@@ -12,9 +15,19 @@ interface TableRowProps{
 
 export default function TableRow(props:TableRowProps) {
 
-    const {title, category, item, price, status, image} = props
+
+
+  const { title, category, item, price, status, image } = props;
+
+  const statusClass = cx({
+    'float-start icon-status': true,
+    'pending': status === 'Pending',
+    'success': status === 'Success',
+    'failed': status === 'Failed',
+  })
+
   return (
-    <div>
+    <>
       <tr className="align-middle text-center">
         <th scope="row">
           <Image
@@ -41,13 +54,13 @@ export default function TableRow(props:TableRowProps) {
         </td>
         <td>
           <div>
-            <span className="float-start icon-status pending"></span>
+            <span className={statusClass}></span>
             <p className="fw-medium text-start color-palette-1 m-0 position-relative">
               {status}
             </p>
           </div>
         </td>
       </tr>
-    </div>
+    </>
   );
 }
